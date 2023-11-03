@@ -10,10 +10,10 @@ from CGAL.CGAL_Kernel import Point_3
 
 import os
 
-datadir = os.environ.get('DATADIR', '../data')
-
+datadir = "C:\\Users\\m.mashayekh\\Documents\\GitHub\\cgal-swig-bindings\\examples\\data"
+path = datadir + '\\elephant.off'
 # test with a mesh as input
-P = Polyhedron_3(datadir + '/elephant.off')
+P = Polyhedron_3(path)
 Q = Polyhedron_3()
 CGAL_Alpha_wrap_3.alpha_wrap_3(P, 0.1, 0.01, Q)
 Q.write_to_file("elephant_alpha_wrapped.off")
